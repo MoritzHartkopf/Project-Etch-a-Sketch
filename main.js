@@ -19,21 +19,31 @@ const miniFlexer = document.createElement("div");
 miniFlexer.classList.add("miniContainer");
 flexer.appendChild(miniFlexer)
 miniFlexer.id = "miniFlexer"
-
 //adding the eventListeners
-miniFlexer.addEventListener('mouseover', () => {
-    miniFlexer.classList.add("hovered");
-
-});
 
 
-    miniFlexer.addEventListener('mouseout', () => {
-        miniFlexer.classList.add("unhovered");
-
-});
-
+    miniFlexer.addEventListener('mouseover',  function() {
+        miniFlexer.classList.add("hovered");
+    });
+    
+        miniFlexer.addEventListener('mouseout', function() {
+            setTimeout(function() {
+              miniFlexer.classList.remove("hovered");
+            }, 500);
+          });
+  
 }
 }
+
+
+
+
+
+
+
+/*
+
+*/
 
 
 //adding the hover events
