@@ -20,13 +20,21 @@ miniFlexer.classList.add("miniContainer");
 flexer.appendChild(miniFlexer)
 miniFlexer.id = "miniFlexer"
 
+//adding the eventListeners
 miniFlexer.addEventListener('mouseover', () => {
     miniFlexer.classList.add("hovered");
+
+});
+
+
+    miniFlexer.addEventListener('mouseout', () => {
+        miniFlexer.classList.add("unhovered");
+
 });
 
 }
-
 }
+
 
 //adding the hover events
 
