@@ -1,50 +1,63 @@
-const mainContainer = document.querySelector('#bigContainer');
-const flexer = document.querySelector("div");
+const mainContainer = document.querySelector("#bigContainer");
+// probably unnecesary const flexer = document.querySelector("div");
 
+function getNumberOfsquares() {
+  var numberOfsquares = prompt(
+    "Which number of squares per side would you like to have? "
+  );
+  return numberOfsquares;
+}
 
+//button to choose the number of rows and columns
 
+const btn = document.createElement("button");
+btn.innerHTML = "Click to customize grid";
+btn.classList.add("btnStyle");
+mainContainer.appendChild(btn);
 
-//creating 4 rows 
-for (let i=1; i<17; i++)
-{
-const flexer = document.createElement("div");
+//adding functionality to the button
+btn.addEventListener("click", function () {
+  var numberOfSquares = parseInt(getNumberOfsquares());
+  createSquares(numberOfSquares);
+});
 
-flexer.classList.add("midContainer");
-mainContainer.appendChild(flexer);
+//adding another conainer in js, because setting the height of the container in the html doesnt do anything
+const frameContainer = document.createElement("div");
+frameContainer.classList.add("frameContainerStyle");
+mainContainer.appendChild(frameContainer);
 
+//creating 4 rows
 
-for (let i=1; i<17; i++)
-{
-const miniFlexer = document.createElement("div");
-miniFlexer.classList.add("miniContainer");
-flexer.appendChild(miniFlexer)
-miniFlexer.id = "miniFlexer"
-//adding the eventListeners
+function createSquares(numberOfSquares) {
+  // Clear the existing squares
+  frameContainer.innerHTML = "";
+  for (let i = 1; i < numberOfSquares; i++) {
+    const flexer = document.createElement("div");
+    flexer.classList.add("midContainer");
+    frameContainer.appendChild(flexer);
 
+    for (let i = 1; i < numberOfSquares; i++) {
+      const miniFlexer = document.createElement("div");
+      miniFlexer.classList.add("miniContainer");
+      flexer.appendChild(miniFlexer);
+      //propabky unnecassary   miniFlexer.id = "miniFlexer";
+      //adding the eventListeners
 
-    miniFlexer.addEventListener('mouseover',  function() {
+      miniFlexer.addEventListener("mouseover", function () {
         miniFlexer.classList.add("hovered");
-    });
-    
-        miniFlexer.addEventListener('mouseout', function() {
-            setTimeout(function() {
-              miniFlexer.classList.remove("hovered");
-            }, 500);
-          });
-  
+      });
+
+      miniFlexer.addEventListener("mouseout", function () {
+        setTimeout(function () {
+          miniFlexer.classList.remove("hovered");
+        }, 500);
+      });
+    }
+  }
 }
-}
-
-
-
-
-
-
-
 /*
 
 */
-
 
 //adding the hover events
 
@@ -64,8 +77,6 @@ for (let i = 0; i<20; i++)  {
 */
 
 //CODE BELOW IS before using loops
-
-
 
 /*const flex1 = document.createElement("div");
 flex1.classList.add("midContainer");
@@ -94,8 +105,6 @@ mainContainer.appendChild(flex4);
 //first row
 
 */
-
-
 
 /*
 

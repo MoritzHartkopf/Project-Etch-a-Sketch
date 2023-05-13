@@ -1,25 +1,33 @@
-
-
-  .midContainer {
-    display: flex;
-    height: 50px;
-    flex-direction: row;
-    border: 1px solid black;
-    color: rebeccapurple; 
-
-  }
-
-  .miniContainer 
-{
-    border: 1px solid black;
-    color: rebeccapurple; 
-    flex:1
+.frameContainerStyle {
+  display: flex;
+  flex-direction: column;
+  height: 100vh; /* Set the fixed height of the container to fill the page */
 }
 
-.hovered 
-{
-    background-color:   blue;
+.midContainer {
+  display: flex;
+  flex-direction: row;
+  border: 1px solid black;
+  color: rebeccapurple;
+  height: calc(
+    100% / 16
+  ); /* Divide the available height evenly among the rows */
 }
 
-.unhovered 
-{background-color: white;}
+.miniContainer {
+  border: 1px solid black;
+  color: rebeccapurple;
+  flex: 1;
+}
+
+.hovered {
+  background-color: blue;
+}
+
+.unhovered {
+  background-color: white;
+}
+
+.btnStyle {
+  border: 4px solid red;
+}
